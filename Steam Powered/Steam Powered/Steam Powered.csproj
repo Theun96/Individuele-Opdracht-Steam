@@ -67,6 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="pictures\1.jpg" />
+    <Content Include="pictures\2.jpg" />
+    <Content Include="pictures\3.jpg" />
+    <Content Include="pictures\4.jpg" />
     <Content Include="Steam.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

@@ -5,3 +5,7 @@
 .navbar-topmargin{
     margin-top: 25px
 }
+ul.nav.navbar-nav.navbar-right.navbar-form {
+    margin-right: 0;
+}
+           
