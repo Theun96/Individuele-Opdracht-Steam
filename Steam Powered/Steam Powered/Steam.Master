@@ -5,8 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Steam Powered</title>
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,42 +21,60 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img src="pictures/logo.png" alt="SteamLogo" />
+                    <a href="/Content Pages/Default.aspx"><img src="/pictures/logo.png" alt="SteamLogo"/></a>
                 </div>
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="/">Winkel</a></li>
-                        <li><a runat="server" href="/">Community</a></li>
-                        <li><a runat="server" href="/">Info</a></li>
-                        <li><a runat="server" href="/">Ondersteuning</a></li>
+                        <li><a runat="server" href="/Content Pages/Default.aspx">Winkel</a></li>
+                        <li><a runat="server" href="/Content Pages/CommunityDefault.aspx">Community</a></li>
+                        <li><a runat="server" href="/Content Pages/InfoDefault.aspx">Info</a></li>
+                        <li><a runat="server" href="/Content Pages/OndersteuningDefault.aspx">Ondersteuning</a></li>
                     </ul>
 
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="/Login.aspx">Inloggen</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="/" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="/Content Pages/Login.aspx">Inloggen</a></li>
+                    </ul>
                 </div>
                 <!--/.navbar-collapse -->
             </div>
         </nav>
+
+        <!-- de store navbar, mogelijk om invisible te maken als er andere pagina weergeven word -->
+        <div id="storeNavBar" class="navbar navbar-default container">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="/Content Pages/Default.aspx">Uitgelicht</a></li>
+                        <li><a runat="server" href="/Content Pages/GamesDefault.aspx">Games</a></li>
+                        <li><a runat="server" href="/Content Pages/SoftwareDefault.aspx">Software</a></li>
+                        <li><a runat="server" href="/Content Pages/HardwareDefault.aspx">Hardware</a></li>
+                        <li><a runat="server" href="/Content Pages/VideoDefault.aspx">Videos</a></li>
+                        <li><a runat="server" href="/Content Pages/VideoDefault.aspx">Nieuws</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right navbar-form">
+                        <li class="form-group">
+                            <input type="text" class="form-control" placeholder="Search" />
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn-default">Submit</button></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </div>
+
         <div class="container body-content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            <asp:ContentPlaceHolder ID="DefaultContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Steam Powered</p>
+                <img src="/pictures/logo_valve_footer.png" alt="valve_footer" />
+                <p>
+                    &copy; <%: DateTime.Now.Year %> Valve Corporation. Alle rechten voorbehouden. Alle handelsmerken zijn eigendom van hun respectievelijke eigenaren in de Verenigde Staten en andere landen. 
+                    BTW indien van toepassing inbegrepen.
+                </p>
             </footer>
         </div>
     </form>

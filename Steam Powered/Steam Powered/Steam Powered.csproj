@@ -66,11 +66,24 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content Pages\CommunityDefault.aspx" />
+    <Content Include="Content Pages\GamesDefault.aspx" />
+    <Content Include="Content Pages\HardwareDefault.aspx" />
+    <Content Include="Content Pages\InfoDefault.aspx" />
+    <Content Include="Content Pages\Login.aspx" />
+    <Content Include="Content Pages\NieuwsDefault.aspx" />
+    <Content Include="Content Pages\OndersteuningDefault.aspx" />
+    <Content Include="Content Pages\SoftwareDefault.aspx" />
+    <Content Include="Content Pages\VideoDefault.aspx" />
+    <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="packages.config" />
     <Content Include="pictures\1.jpg" />
     <Content Include="pictures\2.jpg" />
     <Content Include="pictures\3.jpg" />
     <Content Include="pictures\4.jpg" />
+    <Content Include="pictures\logo_valve_footer.png" />
+    <Content Include="pictures\spotlight1.jpg" />
+    <Content Include="pictures\spotlight2.jpg" />
     <Content Include="Steam.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -86,7 +99,7 @@
   <ItemGroup>
     <Content Include="css\bootstrap.css" />
     <Content Include="css\style.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Content Pages\Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="js\bootstrap.min.js" />
@@ -94,15 +107,78 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="Content Pages\CommunityDefault.aspx.cs">
+      <DependentUpon>CommunityDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\CommunityDefault.aspx.designer.cs">
+      <DependentUpon>CommunityDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\GamesDefault.aspx.cs">
+      <DependentUpon>GamesDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\GamesDefault.aspx.designer.cs">
+      <DependentUpon>GamesDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="Content Pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\HardwareDefault.aspx.cs">
+      <DependentUpon>HardwareDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\HardwareDefault.aspx.designer.cs">
+      <DependentUpon>HardwareDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\InfoDefault.aspx.cs">
+      <DependentUpon>InfoDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\InfoDefault.aspx.designer.cs">
+      <DependentUpon>InfoDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\NieuwsDefault.aspx.cs">
+      <DependentUpon>NieuwsDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\NieuwsDefault.aspx.designer.cs">
+      <DependentUpon>NieuwsDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\OndersteuningDefault.aspx.cs">
+      <DependentUpon>OndersteuningDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\OndersteuningDefault.aspx.designer.cs">
+      <DependentUpon>OndersteuningDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\SoftwareDefault.aspx.cs">
+      <DependentUpon>SoftwareDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\SoftwareDefault.aspx.designer.cs">
+      <DependentUpon>SoftwareDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\VideoDefault.aspx.cs">
+      <DependentUpon>VideoDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\VideoDefault.aspx.designer.cs">
+      <DependentUpon>VideoDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steam.Master.cs">

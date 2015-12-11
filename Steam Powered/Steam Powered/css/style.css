@@ -8,4 +8,12 @@
 ul.nav.navbar-nav.navbar-right.navbar-form {
     margin-right: 0;
 }
-           
+
+.setFullWidth {
+    width: 100%;
+}
+
+.setCarouselfullWidth {
+    max-width: 100%;
+    height: auto;
+}
