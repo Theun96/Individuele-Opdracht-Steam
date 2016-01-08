@@ -16,6 +16,7 @@ namespace Steam_Powered.Models
         public double Prijs { get; set; }
 
         public bool InLibrary { get; set; }
+        public bool OnWishList { get; set; }
 
         public Game(int gameid, string naam, string beschrijving, int categorie, DateTime uitgiftedatum, int dlcVan, double prijs)
         {
@@ -27,5 +28,7 @@ namespace Steam_Powered.Models
             DlcVan = dlcVan;
             Prijs = prijs;
         }
+
+
     }
 }

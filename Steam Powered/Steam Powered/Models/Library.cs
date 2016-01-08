@@ -7,23 +7,45 @@ namespace Steam_Powered.Models
 {
     public class Library
     {
-        readonly List<Game> _games = new List<Game>();
-        
+        private List<Game> _games;
+        private List<Game> _wishList; 
+
         public Library()
         {
+            _games = new List<Game>();
+            _wishList = new List<Game>();
         }
 
-        public void AddGame(Game game)
+        public int AddGame(Game game)
         {
-            foreach (Game g in _games)
+            if (_games.Any(g => g == game))
             {
-                if (g == game)
-                {
-                    break;
-                }
+                return 0;
             }
+
             game.InLibrary = true;
+            game.OnWishList = false;
+
+            foreach (Game g in _wishList.Where(g => g == game))
+            {
+                _wishList.Remove(g);
+            }
+
             _games.Add(game);
+            return 1;
+        }
+
+        public int AddGameWishList(Game game)
+        {
+            if (_wishList.Any(g => g == game || game.InLibrary))
+            {
+                return 0;
+            }
+
+            game.OnWishList = true;
+            _wishList.Add(game);
+
+            return 1;
         }
     }
 }

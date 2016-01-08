@@ -17,19 +17,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active setFullWidth">
-                        <a href=""><img src="/pictures/1.jpg" alt="picture 1"/></a>
+                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/1.jpg" alt="picture 1"/></a>
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/2.jpg" alt="picture 2" />
+                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/2.jpg" alt="picture 2" /></a>
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/3.jpg" alt="picture 3" />
+                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/3.jpg" alt="picture 3" /></a>
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/4.jpg" alt="picture 4" />
+                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/4.jpg" alt="picture 4" /></a>
                     </div>
                 </div>
             </div>
