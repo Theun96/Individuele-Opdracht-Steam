@@ -35,6 +35,17 @@ namespace Steam_Powered.Models
             return 1;
         }
 
+        public int RemoveGame(Game game)
+        {
+            foreach (Game g in _games.Where(g => g == game))
+            {
+                _games.Remove(g);
+                return 1;
+            }
+
+            return 0;
+        }
+
         public int AddGameWishList(Game game)
         {
             if (_wishList.Any(g => g == game || game.InLibrary))

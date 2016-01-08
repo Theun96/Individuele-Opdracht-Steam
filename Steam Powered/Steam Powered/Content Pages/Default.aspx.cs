@@ -11,13 +11,5 @@ namespace Steam_Powered.Content_Pages
         {
             _admin = new Administratie();
         }
-
-        private void BuyGame()
-        {
-            //teststring --> anders website input zoals textbox
-            const string naam = "game1";
-
-            _admin.BuyGame(naam);
-        }
     }
 }

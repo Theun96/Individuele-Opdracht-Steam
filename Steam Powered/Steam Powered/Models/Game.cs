@@ -17,6 +17,8 @@ namespace Steam_Powered.Models
         public bool InLibrary { get; set; }
         public bool OnWishList { get; set; }
 
+        private List<string> Groepen { get; set; } 
+
         public Game(string naam, string beschrijving, int categorie, DateTime uitgiftedatum, int dlcVan, double prijs)
         {
             Naam = naam;
@@ -25,6 +27,19 @@ namespace Steam_Powered.Models
             UitgifteDatum = uitgiftedatum;
             DlcVan = dlcVan;
             Prijs = prijs;
+
+            Groepen = new List<string>();
+        }
+
+        public int AddGroep(string groep)
+        {
+            if (Groepen.Any(s => s == groep))
+            {
+                return 0;
+            }
+
+            Groepen.Add(groep);
+            return 1;
         }
     }
 }

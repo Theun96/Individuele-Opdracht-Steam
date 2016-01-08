@@ -14,12 +14,12 @@ namespace Steam_Powered.Models
         public string Adres { get; set; }
         public string Status { get; set; }
         public double Geld { get; set; }
-        public int Rol { get; set; }
+        public string Rol { get; set; }
 
-        private Library PersonalLibary { get; set; }
-        private List<User> FriendList { get; } 
+        public Library PersonalLibary { get; set; }
+        public List<User> FriendList { get; } 
 
-        public User(string username, string nickname, string password, string adres, string status, double geld, int rol)
+        public User(string username, string nickname, string password, string adres, string status, double geld, string rol)
         {
             UserName = username;
             NickName = nickname;
