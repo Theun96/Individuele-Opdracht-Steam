@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace ICT4Rails
+namespace Steam_Powered.Database
 {
     public static class DatabaseQuerys
     {
@@ -9,8 +8,8 @@ namespace ICT4Rails
 
         static DatabaseQuerys()
         {
-            Query["GetAllLogins"] = "SELECT * FROM EMPLOYEELOGINS";
-            
+            Query["GetAllUsers"] = "SELECT * FROM Users";
+            Query["GetAllGames"] = "SELECT * FROM Games";
         }
     }
 }

@@ -7,7 +7,6 @@ namespace Steam_Powered.Models
 {
     public class Game
     {
-        public int GameId { get; set; }
         public string Naam { get; set; }
         public string Beschrijving { get; set; }
         public int Categorie { get; set; }
@@ -18,9 +17,8 @@ namespace Steam_Powered.Models
         public bool InLibrary { get; set; }
         public bool OnWishList { get; set; }
 
-        public Game(int gameid, string naam, string beschrijving, int categorie, DateTime uitgiftedatum, int dlcVan, double prijs)
+        public Game(string naam, string beschrijving, int categorie, DateTime uitgiftedatum, int dlcVan, double prijs)
         {
-            GameId = gameid;
             Naam = naam;
             Beschrijving = beschrijving;
             Categorie = categorie;
@@ -28,7 +26,5 @@ namespace Steam_Powered.Models
             DlcVan = dlcVan;
             Prijs = prijs;
         }
-
-
     }
 }

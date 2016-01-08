@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Steam.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Steam_Powered.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Steam.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Steam_Powered.Content_Pages.Default" %>
 
 <asp:Content ID="DefaultStorePage" ContentPlaceHolderID="DefaultContentPlaceHolder" runat="server">
     

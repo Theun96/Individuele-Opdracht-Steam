@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Oracle.ManagedDataAccess.Client;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using Oracle.ManagedDataAccess.Client;
 
-namespace ICT4Rails.Data_Layer
+namespace Steam_Powered.Database
 {
     public class DatabaseManager
     {

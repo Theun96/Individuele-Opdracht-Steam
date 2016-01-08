@@ -8,7 +8,6 @@ namespace Steam_Powered.Models
 {
     public class User
     {
-        public int PlayerID { get; set; }
         public string UserName { get; set; }
         public string NickName { get; set; }
         public string Password { get; set; }
@@ -20,9 +19,8 @@ namespace Steam_Powered.Models
         private Library PersonalLibary { get; set; }
         private List<User> FriendList { get; } 
 
-        public User(int playerid, string username, string nickname, string password, string adres, string status, double geld, int rol)
+        public User(string username, string nickname, string password, string adres, string status, double geld, int rol)
         {
-            PlayerID = playerid;
             UserName = username;
             NickName = nickname;
             Password = password;
@@ -32,6 +30,7 @@ namespace Steam_Powered.Models
             Rol = rol;
 
             PersonalLibary = new Library();
+            FriendList = new List<User>();
         }
 
         public List<User> Friends()
@@ -42,6 +41,17 @@ namespace Steam_Powered.Models
         public void AddGame(Game game)
         {
             PersonalLibary.AddGame(game);
+        }
+
+        public int AddFriend(User friend)
+        {
+            if (FriendList.Any(f => f == friend))
+            {
+                return 0;
+            }
+
+            FriendList.Add(friend);
+            return 1;
         }
     }
 }

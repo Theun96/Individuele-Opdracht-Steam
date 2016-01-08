@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Steam_Powered {
+namespace Steam_Powered.Content_Pages {
     
     
     public partial class Default {

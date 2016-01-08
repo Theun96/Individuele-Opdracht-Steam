@@ -195,6 +195,7 @@
     <Compile Include="Content Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Administratie.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Library.cs" />
