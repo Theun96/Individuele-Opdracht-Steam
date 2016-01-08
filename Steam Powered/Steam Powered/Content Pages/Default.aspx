@@ -17,19 +17,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active setFullWidth">
-                        <img src="/pictures/1.jpg" alt="picture 1"/>
+                        <a href=""><img src="/pictures/1.jpg" alt="picture 1"/></a>
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/2.jpg" alt="picture 1" />
+                        <img src="/pictures/2.jpg" alt="picture 2" />
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/3.jpg" alt="picture 1" />
+                        <img src="/pictures/3.jpg" alt="picture 3" />
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/4.jpg" alt="picture 1" />
+                        <img src="/pictures/4.jpg" alt="picture 4" />
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/spotlight2.jpg" alt="picture 1" />
+                        <img src="/pictures/spotlight2.jpg" alt="picture 2" />
                     </div>
                 </div>
             </div>

@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content Pages\CommunityDefault.aspx" />
+    <Content Include="Content Pages\GamePage.aspx" />
     <Content Include="Content Pages\GamesDefault.aspx" />
     <Content Include="Content Pages\HardwareDefault.aspx" />
     <Content Include="Content Pages\InfoDefault.aspx" />
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="Content Pages\CommunityDefault.aspx.designer.cs">
       <DependentUpon>CommunityDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content Pages\GamePage.aspx.cs">
+      <DependentUpon>GamePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\GamePage.aspx.designer.cs">
+      <DependentUpon>GamePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content Pages\GamesDefault.aspx.cs">
       <DependentUpon>GamesDefault.aspx</DependentUpon>
@@ -180,6 +188,10 @@
     <Compile Include="Content Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Categorie.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Library.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steam.Master.cs">
       <DependentUpon>Steam.Master</DependentUpon>
@@ -191,7 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
