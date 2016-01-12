@@ -20,7 +20,7 @@ namespace Steam_Powered.Tests
         {
             Administratie admin = new Administratie();
 
-            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), 0, 59.95);
+            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), "", 59.95);
 
             Assert.AreEqual(admin.AddContent(g), 1);
         }
@@ -30,7 +30,7 @@ namespace Steam_Powered.Tests
         {
             Administratie admin = new Administratie();
 
-            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), 0, 59.95);
+            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), "", 59.95);
             admin.AddContent(g);
 
             Assert.AreEqual(admin.RemoveContent(g), 1);
@@ -41,7 +41,7 @@ namespace Steam_Powered.Tests
         {
             Administratie admin = new Administratie();
 
-            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), 0, 59.95);
+            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), "", 59.95);
             admin.AddContent(g);
 
             User currentUser = admin.GetUserData();
@@ -54,7 +54,7 @@ namespace Steam_Powered.Tests
         {
             Administratie admin = new Administratie();
 
-            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), 0, 59.95);
+            Game g = new Game("game2", "", 1, new DateTime(2016, 1, 8), "", 59.95);
             admin.AddContent(g);
 
             User currentUser = admin.GetUserData();

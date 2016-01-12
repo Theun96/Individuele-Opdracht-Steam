@@ -33,23 +33,23 @@ namespace Steam_Powered.Models
                 var wachtwoord = dr["wachtwoord"].ToString();
                 var adres = dr["adres"].ToString();
                 var status = dr["status"].ToString();
-                var geld = Convert.ToDouble(dr["username"]);
+                var geld = Convert.ToDouble(dr["geld"]);
                 var rol = (dr["rol"]).ToString();
 
                 Users.Add(new User(userName, nickName, wachtwoord, adres, status, geld, rol));
             }
 
-            dt = DatabaseManager.ExecuteReadQuery(DatabaseQuerys.Query["GetAllGames"], null);
+            DataTable dt2 = DatabaseManager.ExecuteReadQuery(DatabaseQuerys.Query["GetAllGames"], null);
 
             Games.Clear();
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt2.Rows)
             {
                 var naam = dr["naam"].ToString();
                 var beschrijving = dr["beschrijving"].ToString();
                 var categorie = Convert.ToInt32(dr["categorie"]);
                 var uitgiftedatum = Convert.ToDateTime(dr["uitgiftedatum"]);
-                var dlcVan = Convert.ToInt32(dr["dlc_Van"]);
+                var dlcVan = (dr["dlc_Van"]).ToString();
                 var prijs = Convert.ToDouble(dr["prijs"]);
 
                 Games.Add(new Game(naam, beschrijving, categorie, uitgiftedatum, dlcVan, prijs));
@@ -57,7 +57,7 @@ namespace Steam_Powered.Models
             */
             
             //Testdata omdat de connectie met de database niet werkt...
-            Games.Add(new Game("game1", "", 1, new DateTime(2016, 1, 8), 0, 19.95));
+            Games.Add(new Game("game1", "", 1, new DateTime(2016, 1, 8), "", 19.95));
             _currentUser = new User("theun", "theun", "password", "adres", "", 100.00, "Player");
             Users.Add(_currentUser);
             

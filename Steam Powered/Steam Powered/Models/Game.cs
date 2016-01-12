@@ -11,7 +11,7 @@ namespace Steam_Powered.Models
         public string Beschrijving { get; set; }
         public int Categorie { get; set; }
         public DateTime UitgifteDatum { get; set; }
-        public int DlcVan { get; set; }
+        public string DlcVan { get; set; }
         public double Prijs { get; set; }
 
         public bool InLibrary { get; set; }
@@ -19,7 +19,7 @@ namespace Steam_Powered.Models
 
         private List<string> Groepen { get; set; } 
 
-        public Game(string naam, string beschrijving, int categorie, DateTime uitgiftedatum, int dlcVan, double prijs)
+        public Game(string naam, string beschrijving, int categorie, DateTime uitgiftedatum, string dlcVan, double prijs)
         {
             Naam = naam;
             Beschrijving = beschrijving;

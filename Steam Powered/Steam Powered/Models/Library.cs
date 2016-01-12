@@ -58,5 +58,10 @@ namespace Steam_Powered.Models
 
             return 1;
         }
+
+        public List<Game> ShowLibrary()
+        {
+            return _games;
+        }
     }
 }

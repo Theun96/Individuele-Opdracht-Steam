@@ -29,21 +29,29 @@ namespace Steam_Powered.Database
 
         public static DataTable ExecuteReadQuery(string sqlquery, OracleParameter[] parameters)
         {
-            using (Connection)
-            using (var command = new OracleCommand(sqlquery, _connection))
+            try
             {
-                if (parameters != null)
+                using (Connection)
+                using (var command = new OracleCommand(sqlquery, _connection))
                 {
-                    command.Parameters.AddRange(parameters);
-                }
-                var DT = new DataTable();
-                using (OracleDataReader reader = command.ExecuteReader())
-                {
-                    DT.Load(reader);
-                }
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+                    var DT = new DataTable();
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        DT.Load(reader);
+                    }
 
-                return DT;
+                    return DT;
+                }
             }
+            catch (OracleException oe)
+            {
+                Console.WriteLine(oe.Message);
+            }
+            return null;
         }
 
         public static void ExecuteInsertQuery(string sqlquery, OracleParameter[] parameters)
