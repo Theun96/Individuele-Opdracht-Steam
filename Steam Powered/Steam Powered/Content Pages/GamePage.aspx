@@ -2,7 +2,12 @@
 
 <asp:Content ID="GamePage" ContentPlaceHolderID="DefaultContentPlaceHolder" runat="server">
 
-    <div>
+    <div class="marginBottem">
+        
+        <div class="GameNaamTitle">
+            <asp:Label ID="lblGameNaam" runat="server" Text=""></asp:Label>
+        </div>
+
         <div class=" row">
             <div class="col-md-8">
                 <div class="setFullWidth">
@@ -11,24 +16,47 @@
             </div>
 
             <div class="col-md-4">
-                <asp:Label ID="lblGameInfo" runat="server" Text=""></asp:Label>
+                <div class="marginBottem">
+                    <asp:Label ID="lblGameInfo" runat="server" Text=""></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="lblReleaseDate" runat="server" Text=""></asp:Label>
+                </div>
             </div>
         </div>
     </div>
 
     <div>
         <div class="row">
-            <div class="col-md-4">
-                <asp:Button ID="btnAddWishlist" CssClass="form-control" runat="server" Text="Toevoegen Verlanglijst" OnClick="btnAddWishlist_Click" />
-                <asp:Label ID="lblWishInfo" runat="server" Text=""></asp:Label>
+            <div class="col-md-3">
+                
+                <div>
+                    
+                    <asp:Button ID="btnAddWishlist" CssClass="btn btn-default" runat="server" Text="Toevoegen Verlanglijst" OnClick="btnAddWishlist_Click" />
+                </div>
+                <div>
+                    <asp:Label ID="lblWishInfo" runat="server" Text=""></asp:Label>
+                </div>
+
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
+            </div>
+            
+            <div class="col-md-3">
+                
             </div>
 
-            <div class="col-md-4">
-                <asp:Button ID="btnBuyGame" CssClass="form-control" runat="server" Text="Kopen" OnClick="BuyGame_Click" />
-                <asp:Label ID="lblBuyInfo" runat="server" Text=""></asp:Label>
+            <div class="col-md-3">
+                
+                <div>
+                    <asp:Label ID="lblPrijs" CssClass="btn btn-default setHalfWidht" runat="server" Text=""></asp:Label>
+                    <asp:Button ID="btnBuyGame" CssClass="btn btn-default setHalfWidht" runat="server" Text="Kopen" OnClick="BuyGame_Click" />
+                </div>
+                <div>
+                    <asp:Label ID="lblBuyInfo" runat="server" Text=""></asp:Label>
+                </div>
+                
             </div>
         </div>
     </div>

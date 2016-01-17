@@ -58,9 +58,10 @@ namespace Steam_Powered.Models
             
             
             //Testdata omdat de connectie met de database niet werkt...
-            Games.Add(new Game("Rainbow", "Tom Clancy's Rainbow Six Siege is het nieuwste deel in de veelgeprezen first-person shooter franchise ontwikkeld door de gerenommeerde Ubisoft Montreal studio.",
+            //Testdata: Games
+            Games.Add(new Game("Tom Clancy's Rainbow Six Siege", "Tom Clancy's Rainbow Six Siege is het nieuwste deel in de veelgeprezen first-person shooter franchise ontwikkeld door de gerenommeerde Ubisoft Montreal studio.",
                 1, new DateTime(2015, 12, 1), "", 59.99));
-            Games.Add(new Game("ResidentEvil", "De geremasterde versie van Resident Evil 0 bevat verbluffende HD-graphics, gemoderniseerde besturing en nog veel meer",
+            Games.Add(new Game("Resident Evil 0", "De geremasterde versie van Resident Evil 0 bevat verbluffende HD-graphics, gemoderniseerde besturing en nog veel meer",
                 1, new DateTime(2016, 1, 19), "", 19.99));
             Games.Add(new Game("Steam Controller", "Experience a new level of precise control for your favorite games. The Steam Controller lets you play your entire collection of Steam games on your TV—even the ones designed without controller support in mind.",
                 2, new DateTime(2015, 11, 10), "", 54.99));
@@ -68,7 +69,20 @@ namespace Steam_Powered.Models
                 2, new DateTime(2015, 11, 10), "", 54.99));
             Games.Add(new Game("Killing Floor 2", "6-player co-op Zed-slaughtering mayhem. In Early Access so we can get the gameplay balance perfected, to ensure the maximum amount of fun. And blood and guts.",
                 1, new DateTime(2015, 4, 21), "", 26.99));
+            Games.Add(new Game("Counter Strike : Global Offensive", "Counter-Strike: Global Offensive (CS: GO) will expand upon the team-based action gameplay that it pioneered when it was launched 14 years ago. CS: GO features new maps, characters, and weapons and delivers updated versions of the classic CS content (de_dust, etc.).",
+                1, new DateTime(2012, 8, 21), "", 13.99));
+            Games.Add(new Game("Grand Theft Auto V", "GTA Online: Executives and Other Criminals is nu beschikbaar.Word een VIP en zet je eigen criminele organisatie op met nieuwe gameplay, aanpasbare appartementen, gepantserde voertuigen, het uitbreidbare Super Yacht en meer.",
+                1, new DateTime(2015, 4, 14), "", 59.99));
+            Games.Add(new Game("Team Fortress 2", "Nine distinct classes provide a broad range of tactical abilities and personalities. Constantly updated with new game modes, maps, equipment and, most importantly, hats!",
+                1, new DateTime(2007, 10, 10), "", 00.00));
+            Games.Add(new Game("Dota 2", "Dota begon als een door gebruikers gemaakte wijziging voor Warcraft 3 en is uitgegroeid tot een van de meest gespeelde online games in de wereld. In navolging van de traditie van Counter-Strike, Day of Defeat, Team Fortress, Portal en Alien Swarm is Dota 2 het resultaat van door Valve ingehuurde",
+                3, new DateTime(2013, 7, 9), "", 00.00));
+            Games.Add(new Game("Fallout 4", "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 – their most ambitious game ever, and the next generation of open-world gaming.",
+                4, new DateTime(2015, 11, 10), "", 59.99));
+            Games.Add(new Game("Goat Simulator", "Just updated with free breads! Try out the life as a slice of toast, a french baguette or why not just roam around toasting things as the new toaster goat? Goat Simulator has never been less gluten free!",
+                5, new DateTime(2014, 4, 1), "", 9.99));
 
+            //Testdata User
             Users.Add(new User("theun", "theun", "password", "adres", "", 100.00, "Player"));
 
             if (HttpContext.Current.Session["User"] == null) return;

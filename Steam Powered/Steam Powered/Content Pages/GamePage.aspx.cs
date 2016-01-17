@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,7 +33,10 @@ namespace Steam_Powered.Content_Pages
                 imgGameImage.ImageUrl = "/pictures/" + _game.ImageInt + ".jpg";
             }
 
+            lblGameNaam.Text = _game.Naam;
             lblGameInfo.Text = _game.Beschrijving;
+            lblPrijs.Text = _game.Prijs.ToString("C0");
+            lblReleaseDate.Text = "Release Datum: " + _game.UitgifteDatum.ToString("dd MMMM yyyy");
 
             if (Session["User"] == null)
             {

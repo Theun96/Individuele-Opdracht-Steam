@@ -13,6 +13,15 @@ namespace Steam_Powered.Content_Pages {
     public partial class GamePage {
         
         /// <summary>
+        /// lblGameNaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGameNaam;
+        
+        /// <summary>
         /// imgGameImage control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Steam_Powered.Content_Pages {
         protected global::System.Web.UI.WebControls.Label lblGameInfo;
         
         /// <summary>
+        /// lblReleaseDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReleaseDate;
+        
+        /// <summary>
         /// btnAddWishlist control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace Steam_Powered.Content_Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblWishInfo;
+        
+        /// <summary>
+        /// lblPrijs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrijs;
         
         /// <summary>
         /// btnBuyGame control.

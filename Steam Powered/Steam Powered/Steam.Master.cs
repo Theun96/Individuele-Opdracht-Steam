@@ -14,8 +14,6 @@ namespace Steam_Powered
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnSubmitSearch.Enabled = false;
-
             if (Session["AdminClass"] == null)
             {
                 admin = new Administratie();

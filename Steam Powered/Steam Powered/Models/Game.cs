@@ -48,11 +48,11 @@ namespace Steam_Powered.Models
 
         private void ImgControl()
         {
-            if (Naam == "Rainbow")
+            if (Naam == "Tom Clancy's Rainbow Six Siege")
             {
                 ImageInt = 1;
             }
-            if (Naam == "ResidentEvil")
+            if (Naam == "Resident Evil 0")
             {
                 ImageInt = 2;
             }
