@@ -84,6 +84,7 @@ namespace Steam_Powered.Models
 
             //Testdata User
             Users.Add(new User("theun", "theun", "password", "adres", "", 100.00, "Player"));
+            Users.Add(new User("schut", "schut", "wachtwoord", "adres2", "", 50.00, "Player"));
 
             if (HttpContext.Current.Session["User"] == null) return;
 
