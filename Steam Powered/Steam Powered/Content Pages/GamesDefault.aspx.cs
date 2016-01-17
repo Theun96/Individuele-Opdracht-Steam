@@ -14,6 +14,12 @@ namespace Steam_Powered.Content_Pages
 
         private List<TableCell> TableCells { get; set; }
 
+        /// <summary>
+        /// pagina laden en een tabel weergeven
+        /// de tabel word gevuld met de data die in de admin classe staat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             _admin = (Administratie) Session["AdminClass"];
@@ -67,7 +73,7 @@ namespace Steam_Powered.Content_Pages
                     {
                         Label l = new Label
                         {
-                            Text = _admin.Games[j].Prijs.ToString("C0"),
+                            Text = _admin.Games[j].Prijs.ToString("C"),
                             CssClass = "GamesPrijsDefault"
                         };
 
@@ -82,6 +88,11 @@ namespace Steam_Powered.Content_Pages
             }
         }
 
+        /// <summary>
+        /// doorschakelen naar de juiste pagina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Naam_Click(object sender, EventArgs e)
         {
             LinkButton l = (LinkButton) sender;

@@ -80,6 +80,7 @@
     <Content Include="Content Pages\NieuwsDefault.aspx" />
     <Content Include="Content Pages\OndersteuningDefault.aspx" />
     <Content Include="Content Pages\SoftwareDefault.aspx" />
+    <Content Include="Content Pages\UserPage.aspx" />
     <Content Include="Content Pages\VideoDefault.aspx" />
     <Content Include="css\jquery-ui.min.css" />
     <Content Include="js\jquery-2.1.4.min.js" />
@@ -180,6 +181,13 @@
     <Compile Include="Content Pages\SoftwareDefault.aspx.designer.cs">
       <DependentUpon>SoftwareDefault.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Content Pages\UserPage.aspx.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content Pages\UserPage.aspx.designer.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Content Pages\VideoDefault.aspx.cs">
       <DependentUpon>VideoDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,7 +208,6 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Administratie.cs" />
-    <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Library.cs" />
     <Compile Include="Models\User.cs" />

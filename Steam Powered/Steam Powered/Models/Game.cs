@@ -17,6 +17,8 @@ namespace Steam_Powered.Models
         public bool InLibrary { get; set; }
         public bool OnWishList { get; set; }
 
+        public int UrenGespeeld { get; set; }
+
         private List<string> Groepen { get; set; } 
 
         public int ImageInt { get; private set; }
@@ -35,6 +37,11 @@ namespace Steam_Powered.Models
             ImgControl();
         }
 
+        /// <summary>
+        /// Een nieuwe groep aanmaken voor de games
+        /// </summary>
+        /// <param name="groep"></param>
+        /// <returns></returns>
         public int AddGroep(string groep)
         {
             if (Groepen.Any(s => s == groep))
@@ -46,6 +53,9 @@ namespace Steam_Powered.Models
             return 1;
         }
 
+        /// <summary>
+        /// testdata voor het inladen van de afbeeldingen
+        /// </summary>
         private void ImgControl()
         {
             if (Naam == "Tom Clancy's Rainbow Six Siege")

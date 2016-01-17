@@ -21,12 +21,14 @@ namespace Steam_Powered.Content_Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //als er geen parameter word meegegeven, dan redirect naar homepage
             string idstring = Request.QueryString["naam"];
-            if (idstring == null) Response.Redirect("/");
+            if (idstring == null) Response.Redirect("Default.aspx");
             GameName = idstring;
 
             _admin = (Administratie)Session["AdminClass"];
             
+            //zoeken welk plaatje hoort bij de huidige game
             foreach (Game g in _admin.Games.Where(g => g.Naam == GameName))
             {
                 _game = g;
@@ -35,9 +37,9 @@ namespace Steam_Powered.Content_Pages
 
             lblGameNaam.Text = _game.Naam;
             lblGameInfo.Text = _game.Beschrijving;
-            lblPrijs.Text = _game.Prijs.ToString("C0");
+            lblPrijs.Text = _game.Prijs.ToString("C");
             lblReleaseDate.Text = "Release Datum: " + _game.UitgifteDatum.ToString("dd MMMM yyyy");
-
+            
             if (Session["User"] == null)
             {
                 btnBuyGame.Enabled = false;
@@ -66,10 +68,24 @@ namespace Steam_Powered.Content_Pages
             {
                 lblBuyInfo.Text = "Er is een fout opgetreden, de game is niet gekocht";
             }
+            if (i == 4)
+            {
+                lblBuyInfo.Text = "Je hebt niet genoeg geld om dit spel te kopen";
+            }
 
             lblWishInfo.Text = "";
+
+            //Response.Redirect(Request.RawUrl);
         }
 
+        /// <summary>
+        /// Bekijken of de game al in je verlanglijst staat
+        /// zo ja, een melding geven
+        /// zo nee, de game in je verlanglijst stoppen
+        /// of als je de game al gekocht hebt, daar een melding van geven.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnAddWishlist_Click(object sender, EventArgs e)
         {
             User currentUser = _admin.GetUserData();

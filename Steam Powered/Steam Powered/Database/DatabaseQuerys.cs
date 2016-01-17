@@ -13,6 +13,7 @@ namespace Steam_Powered.Database
             Query["GetSpecificGame"] = "SELECT * FROM GAME WHERE naam = :gamenaam";
             Query["GetLogin"] = "SELECT * FROM Players WHERE Username = :username AND wachtwoord = :password";
             Query["InsertNewLogin"] = "INSERT INTO PLAYER(USERNAME, NICKNAME, WACHTWOORD, ADRES, STATUS, GELD) VALUES (:username, :nickname, :wachtwoord, :adres, 0.00)";
+            
         }
     }
 }

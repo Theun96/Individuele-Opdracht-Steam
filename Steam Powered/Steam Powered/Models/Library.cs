@@ -14,11 +14,18 @@ namespace Steam_Powered.Models
             _games = new List<Game>();
         }
 
+        /// <summary>
+        /// Een nieuwe game toevoegen aan je library
+        /// return 0: als deze game al in je library staat
+        /// return 1: als de game succesvol is toegevoegd
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public int AddGame(Game game)
         {
             foreach (Game g in _games.Where(g => g == game))
             {
-                if (g.InLibrary) return 0;
+                //if (g.InLibrary) return 3;
                 g.InLibrary = true;
                 g.OnWishList = false;
 
@@ -32,6 +39,13 @@ namespace Steam_Powered.Models
             return 1;
         }
 
+        /// <summary>
+        /// Een Game uit je eigen library verwijderen
+        /// return 1: als dit succes is
+        /// return 0: als dit niet gelukt is
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public int RemoveGame(Game game)
         {
             foreach (Game g in _games.Where(g => g == game))
@@ -43,6 +57,13 @@ namespace Steam_Powered.Models
             return 0;
         }
 
+        /// <summary>
+        /// Een game aan je wishlist toevoegen
+        /// Checken of de game al gekocht is
+        /// Checken of de game al in je wishlist staat
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public int AddGameWishList(Game game)
         {
             if (_games.Any(g => g == game || game.InLibrary))

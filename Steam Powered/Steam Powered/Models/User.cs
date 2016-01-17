@@ -33,16 +33,36 @@ namespace Steam_Powered.Models
             FriendList = new List<User>();
         }
 
+        /// <summary>
+        /// De lijst met friends terug geven
+        /// </summary>
+        /// <returns></returns>
         public List<User> Friends()
         {
             return FriendList;
         }
 
+        /// <summary>
+        /// een nieuwe game toevoegen aan de library
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public int AddGame(Game game)
         {
-            return PersonalLibary.AddGame(game) == 1 ? 1 : 0;
+            if (PersonalLibary.ShowLibrary().Contains(game)) return 3;
+            if ((Geld - game.Prijs) >= 0)
+            {
+                Geld = Geld - game.Prijs;
+                return PersonalLibary.AddGame(game) == 1 ? 1 : 3;
+            }
+            return 0;
         }
 
+        /// <summary>
+        /// een nieuwe vriend toevoegen aan de vriendenlijst
+        /// </summary>
+        /// <param name="friend"></param>
+        /// <returns></returns>
         public int AddFriend(User friend)
         {
             if (FriendList.Any(f => f == friend))

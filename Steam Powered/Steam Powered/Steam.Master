@@ -34,13 +34,23 @@
                     </ul>
 
                     <asp:PlaceHolder ID="Anonymous" runat="server">
+                        
                         <ul class="nav navbar-nav navbar-right">
                             <li><a runat="server" href="/Content Pages/Login.aspx">Inloggen</a></li>
                         </ul>
                     </asp:PlaceHolder>
                     <asp:PlaceHolder ID="LoggedIn" Visible="False" runat="server">
+                        <ul class="nav navbar-nav">
+                            <li><asp:LinkButton ID="btnUserProfile" runat="server" OnClick="btnUserProfile_OnClick"></asp:LinkButton></li>
+                            
+                        </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><asp:LinkButton ID="btnLogUit" runat="server" OnClick="btnLogUit_OnClick">Uitloggen</asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton ID="btnUserGeld" runat="server"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="btnLogUit" runat="server" OnClick="btnLogUit_OnClick">Uitloggen</asp:LinkButton>
+                            </li>
                         </ul>
                     </asp:PlaceHolder>
                 </div>

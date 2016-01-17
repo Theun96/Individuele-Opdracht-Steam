@@ -94,71 +94,122 @@ namespace Steam_Powered.Models
             //User check
             if (HttpContext.Current.Session["User"] == null) return;
 
-            foreach (User u in Users.Where(u => u.UserName == HttpContext.Current.Session["User"].ToString()))
-            {
-                _currentUser = u;
-            }
+            GetUserData();
         }
 
+        /// <summary>
+        /// Hier word een game gekocht
+        /// de methode checkt of de naam voor komt in de lijst met games
+        /// daarna geeft hij de gevonden game door aan de huidige gebruiker
+        /// return 3: als de game al in de library staat
+        /// return 1: als de game succesvol is toegevoegd aan de library
+        /// return 0: als er iets is misgegaan met het zoeken van de game.
+        /// </summary>
+        /// <param name="naam"></param>
+        /// <returns></returns>
         public int BuyGame(string naam)
         {
             foreach (Game g in Games.Where(g => g.Naam == naam))
             {
-                if (_currentUser.AddGame(g) == 0)
+                int i = _currentUser.AddGame(g);
+                if (i == 3)
                 {
                     return 3;
+                }
+                else if (i == 0)
+                {
+                    return 4;
                 }
                 return 1;
             }
             return 0;
         }
 
+        /// <summary>
+        /// dit is voor het toevoegen van nieuwe games aan de website
+        /// return 0: als de game niet gevonden kan worden
+        /// return 1: als de game succesvol is toegevoegd aan de website
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public int AddContent(Game game)
         {
             if (Games.Any(g => g == game))
             {
                 return 0;
             }
+
+            //Code om de game toe te voegen aan de database
+            /*
+                Nog geen code omdat de database niet lekker meewerkt.
+            */
             Games.Add(game);
             return 1;
         }
 
+        /// <summary>
+        /// dit is voor het verwijderen van games uit de website
+        /// return 1: als dit succesvol is gebeurd.
+        /// return 0: als dit niet gelukt is
+        /// Deze methode checkt of de game in de lijst staat 
+        /// als dat zo is dan word de game uit de database en de lijst verwijderd.
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public int RemoveContent(Game game)
         {
             foreach (Game g in Games.Where(g => g == game))
             {
                 Games.Remove(g);
+                //Code om de game toe te voegen aan de database
+                /*
+                    Nog geen code omdat de database niet lekker meewerkt.
+                */
                 return 1;
             }
             return 0;
         }
 
+        /// <summary>
+        /// Een nieuwe User inloggen
+        /// De mee geleverde gegevens worden gecheckt
+        /// uit de lijst met users word bekeken of de user bestaat en dan word er ingelogd.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public int Login(string userName, string password)
         {
-            /*
-            OracleParameter[] parameters =
-            {
-                new OracleParameter("username", userName),
-                new OracleParameter("password", password),
-            };
-            */
-            //DataTable dt = DatabaseManager.ExecuteReadQuery(DatabaseQuerys.Query["GetLogin"], parameters);
-
-            //if (dt.Rows.Count != 1) return 0;
             foreach (User u in Users.Where(u => u.UserName == userName && password == u.Password))
             {
                 _currentUser = u;
+                HttpContext.Current.Session["User"] = _currentUser.UserName;
                 return 1;
             }
             return 0;
         }
 
+        /// <summary>
+        /// Een nieuwe user word geregistreerd
+        /// De benodigde data word nu omgezet naar een nieuwe User
+        /// De nieuwe user word toegevoegd aan de database
+        /// 
+        /// return 0: als de username al voorkomt in de lijst
+        /// return 0: als er iets is misgegaan met de database
+        /// return 1: als de nieuwe user is toegevoegd aan de lijst en de database
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="nickName"></param>
+        /// <param name="password"></param>
+        /// <param name="adres"></param>
+        /// <returns></returns>
         public int Register(string userName, string nickName, string password, string adres)
         {
             if (Users.Any(u => u.UserName == userName))
             {
                 return 0;
             }
+
             /*
             try
             {
@@ -185,18 +236,37 @@ namespace Steam_Powered.Models
 
         public User GetUserData()
         {
+            foreach (User u in Users.Where(u => u.UserName == HttpContext.Current.Session["User"].ToString()))
+            {
+                _currentUser = u;
+            }
+
             return _currentUser;
         }
 
+        /// <summary>
+        /// Met deze methode kan de nickname en de status van de huidige user worden veranderd
+        /// return 0: als er niemand is ingelogd
+        /// return 0: als er iets anders is misgegaan
+        /// return 1: als de informatie juist is ingevoerd
+        /// </summary>
+        /// <param name="nickname"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public int ChangeUserData(string nickname, string status)
         {
             if (_currentUser == null) return 0;
-            foreach (User currentUser in Users.Where(currebtUser => _currentUser == currebtUser))
+            foreach (User u in Users.Where(u => _currentUser == u))
             {
-                currentUser.NickName = nickname;
-                currentUser.Status = status;
+                u.NickName = nickname;
+                u.Status = status;
 
-                _currentUser = currentUser;
+                //Code om de game toe te voegen aan de database
+                /*
+                    Nog geen code omdat de database niet lekker meewerkt.
+                */
+
+                _currentUser = u;
                 return 1;
             }
             return 0;

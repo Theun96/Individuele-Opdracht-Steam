@@ -7,81 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Steam_Powered {
+namespace Steam_Powered.Content_Pages {
     
     
-    public partial class Steam {
+    public partial class UserPage {
         
         /// <summary>
-        /// form1 control.
+        /// lblWishlistGames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblWishlistGames;
         
         /// <summary>
-        /// Anonymous control.
+        /// lblWishGameNaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Anonymous;
+        protected global::System.Web.UI.WebControls.Label lblWishGameNaam;
         
         /// <summary>
-        /// LoggedIn control.
+        /// lblGamePrijs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder LoggedIn;
+        protected global::System.Web.UI.WebControls.Label lblGamePrijs;
         
         /// <summary>
-        /// btnUserProfile control.
+        /// WishTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnUserProfile;
+        protected global::System.Web.UI.WebControls.Table WishTable;
         
         /// <summary>
-        /// btnUserGeld control.
+        /// lblGekochteGames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnUserGeld;
+        protected global::System.Web.UI.WebControls.Label lblGekochteGames;
         
         /// <summary>
-        /// btnLogUit control.
+        /// lblGameNameTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogUit;
+        protected global::System.Web.UI.WebControls.Label lblGameNameTable;
         
         /// <summary>
-        /// btnSubmitSearch control.
+        /// lblUrenGespeeld control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmitSearch;
+        protected global::System.Web.UI.WebControls.Label lblUrenGespeeld;
         
         /// <summary>
-        /// DefaultContentPlaceHolder control.
+        /// UserTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder DefaultContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Table UserTable;
     }
 }
