@@ -9,7 +9,7 @@ namespace Steam_Powered.Content_Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _admin = new Administratie();
+            _admin = (Administratie) Session["AdminClass"];
         }
     }
 }

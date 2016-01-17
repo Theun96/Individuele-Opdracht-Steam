@@ -13,7 +13,7 @@ namespace Steam_Powered.Content_Pages
 {
     public partial class GamePage : System.Web.UI.Page
     {
-        private static Administratie Admin { get; set; }
+        private Administratie _admin;
         private Game _game;
 
         public string GameName { get; set; }
@@ -24,23 +24,31 @@ namespace Steam_Powered.Content_Pages
             if (idstring == null) Response.Redirect("/");
             GameName = idstring;
 
-            if (!IsPostBack)
-            {
-                Admin = new Administratie();
-            }
+            _admin = (Administratie)Session["AdminClass"];
             
-            foreach (Game g in Admin.Games.Where(g => g.Naam == GameName))
+            foreach (Game g in _admin.Games.Where(g => g.Naam == GameName))
             {
                 _game = g;
                 imgGameImage.ImageUrl = "/pictures/" + _game.ImageInt + ".jpg";
             }
 
             lblGameInfo.Text = _game.Beschrijving;
+
+            if (Session["User"] == null)
+            {
+                btnBuyGame.Enabled = false;
+                btnAddWishlist.Enabled = false;
+            }
+            else
+            {
+                btnBuyGame.Enabled = true;
+                btnAddWishlist.Enabled = true;
+            }
         }
 
         protected void BuyGame_Click(object sender, EventArgs e)
         {
-            int i = Admin.BuyGame(GameName);
+            int i = _admin.BuyGame(GameName);
 
             if (i == 1)
             {
@@ -60,7 +68,7 @@ namespace Steam_Powered.Content_Pages
 
         protected void btnAddWishlist_Click(object sender, EventArgs e)
         {
-            User currentUser = Admin.GetUserData();
+            User currentUser = _admin.GetUserData();
 
             List<Game> currentUserLibrary = currentUser.PersonalLibary.ShowLibrary();
             

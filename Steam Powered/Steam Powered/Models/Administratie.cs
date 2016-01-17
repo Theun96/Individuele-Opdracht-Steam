@@ -69,9 +69,14 @@ namespace Steam_Powered.Models
             Games.Add(new Game("Killing Floor 2", "6-player co-op Zed-slaughtering mayhem. In Early Access so we can get the gameplay balance perfected, to ensure the maximum amount of fun. And blood and guts.",
                 1, new DateTime(2015, 4, 21), "", 26.99));
 
-            _currentUser = new User("theun", "theun", "password", "adres", "", 100.00, "Player");
-            Users.Add(_currentUser);
-            
+            Users.Add(new User("theun", "theun", "password", "adres", "", 100.00, "Player"));
+
+            if (HttpContext.Current.Session["User"] == null) return;
+
+            foreach (User u in Users.Where(u => u.UserName == HttpContext.Current.Session["User"].ToString()))
+            {
+                _currentUser = u;
+            }
         }
 
         public int BuyGame(string naam)
@@ -109,9 +114,16 @@ namespace Steam_Powered.Models
 
         public int Login(string userName, string password)
         {
-            DataTable dt = DatabaseManager.ExecuteReadQuery(DatabaseQuerys.Query["GetLogin"], null);
+            /*
+            OracleParameter[] parameters =
+            {
+                new OracleParameter("username", userName),
+                new OracleParameter("password", password),
+            };
+            */
+            //DataTable dt = DatabaseManager.ExecuteReadQuery(DatabaseQuerys.Query["GetLogin"], parameters);
 
-            if (dt.Rows.Count <= 0) return 0;
+            //if (dt.Rows.Count != 1) return 0;
             foreach (User u in Users.Where(u => u.UserName == userName && password == u.Password))
             {
                 _currentUser = u;
@@ -158,12 +170,12 @@ namespace Steam_Powered.Models
         public int ChangeUserData(string nickname, string status)
         {
             if (_currentUser == null) return 0;
-            foreach (User currebtUser in Users.Where(currebtUser => _currentUser == currebtUser))
+            foreach (User currentUser in Users.Where(currebtUser => _currentUser == currebtUser))
             {
-                currebtUser.NickName = nickname;
-                currebtUser.Status = status;
+                currentUser.NickName = nickname;
+                currentUser.Status = status;
 
-                _currentUser = currebtUser;
+                _currentUser = currentUser;
                 return 1;
             }
             return 0;

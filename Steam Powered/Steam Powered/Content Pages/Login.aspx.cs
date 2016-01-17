@@ -10,14 +10,11 @@ namespace Steam_Powered
 {
     public partial class Login : System.Web.UI.Page
     {
-        private static Administratie admin { get; set; }
+        private static Administratie _admin;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                admin = new Administratie();
-            }
+            _admin = (Administratie) Session["AdminClass"];
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -25,10 +22,9 @@ namespace Steam_Powered
             string username = txtUsername.Text;
             string passowrd = txtPassword.Text;
 
-            if (admin.Login(username, passowrd) == 1)
-            {
-                Session["User"] = username;
-            }
+            if (_admin.Login(username, passowrd) != 1) return;
+            Session["User"] = username;
+            Response.Redirect("/Content Pages/Default.aspx");
         }
     }
 }
