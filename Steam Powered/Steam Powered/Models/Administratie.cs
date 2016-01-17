@@ -15,6 +15,11 @@ namespace Steam_Powered.Models
         public List<Game> Games { get; set; }
         public List<User> Users { get; set; }
 
+        /// <summary>
+        /// Administratie word hier gedeclareerd
+        /// Games en Users word gevuld door de database
+        /// Als er is ingelogd word de huidige user toegevoegd voor verder gebruik
+        /// </summary>
         public Administratie()
         {
             //declareren
@@ -86,6 +91,7 @@ namespace Steam_Powered.Models
             Users.Add(new User("theun", "theun", "password", "adres", "", 100.00, "Player"));
             Users.Add(new User("schut", "schut", "wachtwoord", "adres2", "", 50.00, "Player"));
 
+            //User check
             if (HttpContext.Current.Session["User"] == null) return;
 
             foreach (User u in Users.Where(u => u.UserName == HttpContext.Current.Session["User"].ToString()))

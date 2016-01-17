@@ -17,11 +17,11 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active setFullWidth">
-                        <a href="/Content Pages/GamePage.aspx?naam=Rainbow"><img src="/pictures/1.jpg" alt="picture 1"/></a>
+                        <a href="/Content Pages/GamePage.aspx?naam=Tom Clancy's Rainbow Six Siege"><img src="/pictures/1.jpg" alt="picture 1"/></a>
                     </div>
 
                     <div class="item">
-                        <a href="/Content Pages/GamePage.aspx?naam=ResidentEvil"><img src="/pictures/2.jpg" alt="picture 2" /></a>
+                        <a href="/Content Pages/GamePage.aspx?naam=Resident Evil 0"><img src="/pictures/2.jpg" alt="picture 2" /></a>
                     </div>
 
                     <div class="item">
