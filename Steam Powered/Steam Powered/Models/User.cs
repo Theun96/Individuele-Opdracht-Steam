@@ -38,9 +38,9 @@ namespace Steam_Powered.Models
             return FriendList;
         }
 
-        public void AddGame(Game game)
+        public int AddGame(Game game)
         {
-            PersonalLibary.AddGame(game);
+            return PersonalLibary.AddGame(game) == 1 ? 1 : 0;
         }
 
         public int AddFriend(User friend)

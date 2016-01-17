@@ -12,7 +12,7 @@ namespace Steam_Powered.Tests
         {
             Administratie admin = new Administratie();
             
-            Assert.AreEqual(admin.BuyGame("game1"), 1);
+            Assert.AreEqual(admin.BuyGame("Rainbow"), 1);
         }
 
         [TestMethod]

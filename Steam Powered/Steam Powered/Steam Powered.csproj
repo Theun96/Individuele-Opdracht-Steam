@@ -81,12 +81,16 @@
     <Content Include="Content Pages\OndersteuningDefault.aspx" />
     <Content Include="Content Pages\SoftwareDefault.aspx" />
     <Content Include="Content Pages\VideoDefault.aspx" />
+    <Content Include="css\jquery-ui.min.css" />
     <Content Include="js\jquery-2.1.4.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\npm.js" />
     <Content Include="packages.config" />
     <Content Include="pictures\1.jpg" />
     <Content Include="pictures\2.jpg" />
     <Content Include="pictures\3.jpg" />
     <Content Include="pictures\4.jpg" />
+    <Content Include="pictures\5.jpg" />
     <Content Include="pictures\logo_valve_footer.png" />
     <Content Include="pictures\spotlight1.jpg" />
     <Content Include="pictures\spotlight2.jpg" />

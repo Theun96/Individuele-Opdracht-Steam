@@ -19,6 +19,8 @@ namespace Steam_Powered.Models
 
         private List<string> Groepen { get; set; } 
 
+        public int ImageInt { get; private set; }
+
         public Game(string naam, string beschrijving, int categorie, DateTime uitgiftedatum, string dlcVan, double prijs)
         {
             Naam = naam;
@@ -29,6 +31,8 @@ namespace Steam_Powered.Models
             Prijs = prijs;
 
             Groepen = new List<string>();
+
+            ImgControl();
         }
 
         public int AddGroep(string groep)
@@ -40,6 +44,30 @@ namespace Steam_Powered.Models
 
             Groepen.Add(groep);
             return 1;
+        }
+
+        private void ImgControl()
+        {
+            if (Naam == "Rainbow")
+            {
+                ImageInt = 1;
+            }
+            if (Naam == "ResidentEvil")
+            {
+                ImageInt = 2;
+            }
+            if (Naam == "Steam Controller")
+            {
+                ImageInt = 3;
+            }
+            if (Naam == "Steam Link")
+            {
+                ImageInt = 4;
+            }
+            if (Naam == "Killing Floor 2")
+            {
+                ImageInt = 5;
+            }
         }
     }
 }

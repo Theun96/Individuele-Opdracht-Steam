@@ -11,7 +11,15 @@ namespace Steam_Powered
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["User"] == null) return;
+            LoggedIn.Visible = true;
+            Anonymous.Visible = false;
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Redirect("/Content Pages/Default.aspx");
         }
     }
 }

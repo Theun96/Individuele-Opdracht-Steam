@@ -21,7 +21,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/Content Pages/Default.aspx"><img src="/pictures/logo.png" alt="SteamLogo"/></a>
+                    <a href="/Content Pages/Default.aspx">
+                        <img src="/pictures/logo.png" alt="SteamLogo" /></a>
                 </div>
 
                 <div class="navbar-collapse collapse">
@@ -32,9 +33,16 @@
                         <li><a runat="server" href="/Content Pages/OndersteuningDefault.aspx">Ondersteuning</a></li>
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="/Content Pages/Login.aspx">Inloggen</a></li>
-                    </ul>
+                    <asp:PlaceHolder ID="Anonymous" runat="server">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="/Content Pages/Login.aspx">Inloggen</a></li>
+                        </ul>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder ID="LoggedIn" Visible="False" runat="server">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><asp:LinkButton ID="btnLogUit" runat="server">Uitloggen</asp:LinkButton></li>
+                        </ul>
+                    </asp:PlaceHolder>
                 </div>
                 <!--/.navbar-collapse -->
             </div>

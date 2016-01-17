@@ -20,6 +20,7 @@ namespace Steam_Powered.Models
             //declareren
             Games = new List<Game>();
             Users = new List<User>();
+
             /*
             //users ophalen
             DataTable dt = DatabaseManager.ExecuteReadQuery(DatabaseQuerys.Query["GetAllUsers"], null);
@@ -53,11 +54,21 @@ namespace Steam_Powered.Models
                 var prijs = Convert.ToDouble(dr["prijs"]);
 
                 Games.Add(new Game(naam, beschrijving, categorie, uitgiftedatum, dlcVan, prijs));
-            }
-            */
+            }*/
+            
             
             //Testdata omdat de connectie met de database niet werkt...
-            Games.Add(new Game("game1", "", 1, new DateTime(2016, 1, 8), "", 19.95));
+            Games.Add(new Game("Rainbow", "Tom Clancy's Rainbow Six Siege is het nieuwste deel in de veelgeprezen first-person shooter franchise ontwikkeld door de gerenommeerde Ubisoft Montreal studio.",
+                1, new DateTime(2015, 12, 1), "", 59.99));
+            Games.Add(new Game("ResidentEvil", "De geremasterde versie van Resident Evil 0 bevat verbluffende HD-graphics, gemoderniseerde besturing en nog veel meer",
+                1, new DateTime(2016, 1, 19), "", 19.99));
+            Games.Add(new Game("Steam Controller", "Experience a new level of precise control for your favorite games. The Steam Controller lets you play your entire collection of Steam games on your TV—even the ones designed without controller support in mind.",
+                2, new DateTime(2015, 11, 10), "", 54.99));
+            Games.Add(new Game("Steam Link", "Play your Steam games on any TV in the house with Steam Link. Setup is easy. Just connect your Steam Link to your TV and home network, where it will automatically discover any computer running Steam. Then grab a controller and play your collection of games from the comfort of your couch.",
+                2, new DateTime(2015, 11, 10), "", 54.99));
+            Games.Add(new Game("Killing Floor 2", "6-player co-op Zed-slaughtering mayhem. In Early Access so we can get the gameplay balance perfected, to ensure the maximum amount of fun. And blood and guts.",
+                1, new DateTime(2015, 4, 21), "", 26.99));
+
             _currentUser = new User("theun", "theun", "password", "adres", "", 100.00, "Player");
             Users.Add(_currentUser);
             
@@ -67,7 +78,10 @@ namespace Steam_Powered.Models
         {
             foreach (Game g in Games.Where(g => g.Naam == naam))
             {
-                _currentUser.AddGame(g);
+                if (_currentUser.AddGame(g) == 0)
+                {
+                    return 3;
+                }
                 return 1;
             }
             return 0;

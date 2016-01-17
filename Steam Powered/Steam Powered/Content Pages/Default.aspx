@@ -17,19 +17,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active setFullWidth">
-                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/1.jpg" alt="picture 1"/></a>
+                        <a href="/Content Pages/GamePage.aspx?naam=Rainbow"><img src="/pictures/1.jpg" alt="picture 1"/></a>
                     </div>
 
                     <div class="item">
-                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/2.jpg" alt="picture 2" /></a>
+                        <a href="/Content Pages/GamePage.aspx?naam=ResidentEvil"><img src="/pictures/2.jpg" alt="picture 2" /></a>
                     </div>
 
                     <div class="item">
-                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/3.jpg" alt="picture 3" /></a>
+                        <a href="/Content Pages/GamePage.aspx?naam=Steam Controller"><img src="/pictures/3.jpg" alt="picture 3" /></a>
                     </div>
 
                     <div class="item">
-                        <a href="/Content Pages/GamePage.aspx"><img src="/pictures/4.jpg" alt="picture 4" /></a>
+                        <a href="/Content Pages/GamePage.aspx?naam=Steam Link"><img src="/pictures/4.jpg" alt="picture 4" /></a>
                     </div>
                 </div>
             </div>
@@ -46,11 +46,11 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="/pictures/spotlight1.jpg" alt="picture 1" />
+                        <a href="/Content Pages/GamePage.aspx?naam=Killing Floor 2"><img src="/pictures/spotlight2.jpg" alt="picture 2" /></a>
                     </div>
 
                     <div class="item">
-                        <img src="/pictures/spotlight2.jpg" alt="picture 2" />
+                        <img src="/pictures/spotlight1.jpg" alt="picture 1" />
                     </div>
                 </div>
             </div>
