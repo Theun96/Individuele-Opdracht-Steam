@@ -116,9 +116,9 @@ namespace Steam_Powered.Models
                 {
                     return 3;
                 }
-                else if (i == 0)
+                else if (i == 2)
                 {
-                    return 4;
+                    return 2;
                 }
                 return 1;
             }
@@ -180,6 +180,7 @@ namespace Steam_Powered.Models
         /// <returns></returns>
         public int Login(string userName, string password)
         {
+            _currentUser = null;
             foreach (User u in Users.Where(u => u.UserName == userName && password == u.Password))
             {
                 _currentUser = u;

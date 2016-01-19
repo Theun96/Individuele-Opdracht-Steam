@@ -49,13 +49,14 @@ namespace Steam_Powered.Content_Pages
 
                     if (i == 0)
                     {
-                        Label l = new Label
+                        Image img = new Image
                         {
-                            Text = "picture",
+                            ImageUrl = "/pictures/header" + _admin.Games[j].ImageInt + ".jpg",
+                            AlternateText = _admin.Games[j].Naam,
                             CssClass = "GamePictureDefault"
                         };
 
-                        c.Controls.Add(l);
+                        c.Controls.Add(img);
                     }
                     if (i == 1)
                     {

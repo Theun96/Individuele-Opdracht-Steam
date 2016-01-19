@@ -9,14 +9,15 @@
         </div>
 
         <div class=" row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="setFullWidth">
                     <asp:Image ID="imgGameImage" runat="server" />
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="marginBottem">
+                    <asp:Image ID="imgGameHeader" runat="server" />
                     <asp:Label ID="lblGameInfo" runat="server" Text=""></asp:Label>
                 </div>
                 <div>

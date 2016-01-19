@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            <asp:Table ID="UserTable" runat="server"></asp:Table>
+            <asp:Table ID="GekochtTable" runat="server"></asp:Table>
         </div>
     </div>
 

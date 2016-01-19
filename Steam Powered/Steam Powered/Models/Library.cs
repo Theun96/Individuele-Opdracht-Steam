@@ -25,7 +25,8 @@ namespace Steam_Powered.Models
         {
             foreach (Game g in _games.Where(g => g == game))
             {
-                //if (g.InLibrary) return 3;
+                if (g.InLibrary) return 2;
+
                 g.InLibrary = true;
                 g.OnWishList = false;
 
@@ -72,6 +73,7 @@ namespace Steam_Powered.Models
             }
 
             game.OnWishList = true;
+            game.InLibrary = false;
             _games.Add(game);
 
             return 1;

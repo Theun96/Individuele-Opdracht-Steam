@@ -32,7 +32,12 @@ namespace Steam_Powered.Content_Pages
             foreach (Game g in _admin.Games.Where(g => g.Naam == GameName))
             {
                 _game = g;
+
                 imgGameImage.ImageUrl = "/pictures/" + _game.ImageInt + ".jpg";
+                imgGameImage.AlternateText = "picture: " + _game.Naam;
+
+                imgGameHeader.ImageUrl = "/pictures/header" + _game.ImageInt + ".jpg";
+                imgGameHeader.AlternateText = "header: " + _game.Naam;
             }
 
             lblGameNaam.Text = _game.Naam;
@@ -60,7 +65,7 @@ namespace Steam_Powered.Content_Pages
             {
                 lblBuyInfo.Text = "De game is succesvol gekocht";
             }
-            if (i == 3)
+            if (i == 2)
             {
                 lblBuyInfo.Text = "De game staat al in je Library";
             }
@@ -68,14 +73,12 @@ namespace Steam_Powered.Content_Pages
             {
                 lblBuyInfo.Text = "Er is een fout opgetreden, de game is niet gekocht";
             }
-            if (i == 4)
+            if (i == 3)
             {
                 lblBuyInfo.Text = "Je hebt niet genoeg geld om dit spel te kopen";
             }
 
             lblWishInfo.Text = "";
-
-            //Response.Redirect(Request.RawUrl);
         }
 
         /// <summary>

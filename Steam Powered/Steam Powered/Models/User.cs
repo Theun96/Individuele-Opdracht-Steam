@@ -17,7 +17,7 @@ namespace Steam_Powered.Models
         public string Rol { get; set; }
 
         public Library PersonalLibary { get; set; }
-        public List<User> FriendList { get; } 
+        public List<User> FriendList { get; }
 
         public User(string username, string nickname, string password, string adres, string status, double geld, string rol)
         {
@@ -49,13 +49,22 @@ namespace Steam_Powered.Models
         /// <returns></returns>
         public int AddGame(Game game)
         {
-            if (PersonalLibary.ShowLibrary().Contains(game)) return 3;
+            foreach (Game tempGame in PersonalLibary.ShowLibrary())
+            {
+                if (tempGame == game)
+                {
+                    if (tempGame.InLibrary)
+                    {
+                        return 2;
+                    }
+                }
+            }
             if ((Geld - game.Prijs) >= 0)
             {
                 Geld = Geld - game.Prijs;
-                return PersonalLibary.AddGame(game) == 1 ? 1 : 3;
+                return PersonalLibary.AddGame(game) == 1 ? 1 : 2;
             }
-            return 0;
+            return 3;
         }
 
         /// <summary>

@@ -76,12 +76,12 @@ namespace Steam_Powered.Content_Pages {
         protected global::System.Web.UI.WebControls.Label lblUrenGespeeld;
         
         /// <summary>
-        /// UserTable control.
+        /// GekochtTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table UserTable;
+        protected global::System.Web.UI.WebControls.Table GekochtTable;
     }
 }

@@ -31,6 +31,15 @@ namespace Steam_Powered.Content_Pages {
         protected global::System.Web.UI.WebControls.Image imgGameImage;
         
         /// <summary>
+        /// imgGameHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgGameHeader;
+        
+        /// <summary>
         /// lblGameInfo control.
         /// </summary>
         /// <remarks>

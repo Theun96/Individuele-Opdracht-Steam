@@ -78,6 +78,30 @@ namespace Steam_Powered.Models
             {
                 ImageInt = 5;
             }
+            if(Naam == "Counter Strike : Global Offensive")
+            {
+                ImageInt = 6;
+            }
+            if (Naam == "Grand Theft Auto V")
+            {
+                ImageInt = 7;
+            }
+            if (Naam == "Team Fortress 2")
+            {
+                ImageInt = 8;
+            }
+            if (Naam == "Dota 2")
+            {
+                ImageInt = 9;
+            }
+            if (Naam == "Fallout 4")
+            {
+                ImageInt = 10;
+            }
+            if (Naam == "Goat Simulator")
+            {
+                ImageInt = 11;
+            }
         }
     }
 }
